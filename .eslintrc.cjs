@@ -27,9 +27,8 @@ module.exports = {
         '@typescript-eslint',
       ],
       extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
         'airbnb',
       ],
       rules: {
@@ -68,6 +67,21 @@ module.exports = {
         ],
         'import/extensions': [
           'off',
+        ],
+        'import/prefer-default-export': [
+          'off',
+        ],
+        'no-shadow': [
+          'off',
+        ],
+        '@typescript-eslint/no-shadow': [
+          'error',
+        ],
+        'no-unused-vars': [
+          'off',
+        ],
+        '@typescript-eslint/no-unused-vars': [
+          'error',
         ],
       },
     },
