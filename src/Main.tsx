@@ -1,5 +1,7 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
+
+import Home from '^/components/pages/Home';
 
 const Root = styled.div`
   text-align: center;
@@ -18,26 +20,10 @@ const Root = styled.div`
   user-select: none;
 `;
 
-const Main: FC<{}> = () => {
-  const [count, setCount] = useState<number>(0);
-
-  const increaseCount: () => void = () => {
-    setCount(count + 1);
-  };
-
-  return (
-    <Root>
-      <h1>Practicing Vite + ESLint + Yarn Berry</h1>
-      <div>
-        <div>
-          Current count: {count}
-        </div>
-        <button onClick={increaseCount}>
-          Increase count
-        </button>
-      </div>
-    </Root>
-  );
-};
+const Main: FC<{}> = () => (
+  <Root>
+    <Home />
+  </Root>
+);
 
 export default Main;
