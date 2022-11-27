@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import { RouterProvider } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Home from '^/components/pages/Home';
+import router from '^/router';
 
 const Root = styled.div`
   text-align: center;
@@ -22,7 +23,22 @@ const Root = styled.div`
 
 const Main: FC<{}> = () => (
   <Root>
-    <Home />
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="koishi">Koishi</a>
+        </li>
+        <li>
+          <a href="hoshino">Hoshino</a>
+        </li>
+      </ul>
+    </nav>
+    <RouterProvider
+      router={router}
+    />
   </Root>
 );
 
