@@ -11,16 +11,16 @@ const router = createBrowserRouter([
     path: '/',
     element: <Home />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'koishi',
-        element: <Koishi />,
-      },
-      {
-        path: 'hoshino',
-        element: <Hoshino />,
-      },
-    ],
+  },
+  {
+    path: '/koishi',
+    element: <Koishi />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/hoshino',
+    element: <Hoshino />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
