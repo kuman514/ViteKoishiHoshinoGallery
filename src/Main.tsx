@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import { RouterProvider } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-
-import router from '^/router';
 
 const Root = styled.div`
   text-align: center;
@@ -21,25 +19,30 @@ const Root = styled.div`
   user-select: none;
 `;
 
-const Main: FC<{}> = () => (
-  <Root>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="koishi">Koishi</a>
-        </li>
-        <li>
-          <a href="hoshino">Hoshino</a>
-        </li>
-      </ul>
-    </nav>
-    <RouterProvider
-      router={router}
-    />
-  </Root>
-);
+const NavLi = styled.li`
+  cursor: pointer;
+`;
+
+const Main: FC<{}> = () => {
+  const navigate = useNavigate();
+  return (
+    <Root>
+      <nav>
+        <ul>
+          <NavLi onClick={() => navigate('/')}>
+            Home
+          </NavLi>
+          <NavLi onClick={() => navigate('koishi')}>
+            Koishi
+          </NavLi>
+          <NavLi onClick={() => navigate('hoshino')}>
+            Hoshino
+          </NavLi>
+        </ul>
+      </nav>
+      <Outlet />
+    </Root>
+  );
+};
 
 export default Main;

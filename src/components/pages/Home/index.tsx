@@ -1,13 +1,5 @@
 import React, { FC } from 'react';
-import { Outlet } from 'react-router-dom';
 
-const Home: FC<{}> = () => (
-  <div>
-    <h1>
-      Currently Building!
-    </h1>
-    <Outlet />
-  </div>
-);
+const Home: FC<{}> = () => (<span>home</span>);
 
 export default Home;
