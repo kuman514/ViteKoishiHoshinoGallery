@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import NavListItem from '^/components/atoms/NavListItem';
 
 const Root = styled.div`
   text-align: center;
@@ -19,25 +20,21 @@ const Root = styled.div`
   user-select: none;
 `;
 
-const NavLi = styled.li`
-  cursor: pointer;
-`;
-
 const Main: FC<{}> = () => {
   const navigate = useNavigate();
   return (
     <Root>
       <nav>
         <ul>
-          <NavLi onClick={() => navigate('/')}>
+          <NavListItem onClick={() => navigate('/')}>
             Home
-          </NavLi>
-          <NavLi onClick={() => navigate('koishi')}>
+          </NavListItem>
+          <NavListItem onClick={() => navigate('koishi')}>
             Koishi
-          </NavLi>
-          <NavLi onClick={() => navigate('hoshino')}>
+          </NavListItem>
+          <NavListItem onClick={() => navigate('hoshino')}>
             Hoshino
-          </NavLi>
+          </NavListItem>
         </ul>
       </nav>
       <Outlet />
