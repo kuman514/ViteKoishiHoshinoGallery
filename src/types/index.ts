@@ -9,3 +9,9 @@ export const RouteMatch: Record<RouteName, string> = {
   [RouteName.KOISHI]: 'koishi',
   [RouteName.HOSHINO]: 'hoshino',
 };
+
+export const RouteTitle: Record<RouteName, string> = {
+  [RouteName.HOME]: 'Home',
+  [RouteName.KOISHI]: 'Koishi',
+  [RouteName.HOSHINO]: 'Hoshino',
+};

@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import NavListItem from '^/components/atoms/NavListItem';
+import { RouteTitle, RouteName, RouteMatch } from '^/types';
 
 const Root = styled.div`
   text-align: center;
@@ -22,19 +23,16 @@ const Root = styled.div`
 
 const Main: FC<{}> = () => {
   const navigate = useNavigate();
+  const navList: ReactNode = (Object.keys(RouteTitle) as Array<RouteName>).map((key) => (
+    <NavListItem key={RouteTitle[key]} onClick={() => navigate(RouteMatch[key])}>
+      { RouteTitle[key] }
+    </NavListItem>
+  ));
   return (
     <Root>
       <nav>
         <ul>
-          <NavListItem onClick={() => navigate('/')}>
-            Home
-          </NavListItem>
-          <NavListItem onClick={() => navigate('koishi')}>
-            Koishi
-          </NavListItem>
-          <NavListItem onClick={() => navigate('hoshino')}>
-            Hoshino
-          </NavListItem>
+          { navList }
         </ul>
       </nav>
       <Outlet />
