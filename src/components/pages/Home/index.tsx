@@ -8,10 +8,12 @@ const Home: FC<{}> = () => {
     <div>
       <HomeSelection
         title="Koishi"
+        btnColor="#20CC20"
         onClick={() => navigate('koishi')}
       />
       <HomeSelection
         title="Hoshino"
+        btnColor="#DD90BB"
         onClick={() => navigate('hoshino')}
       />
     </div>
