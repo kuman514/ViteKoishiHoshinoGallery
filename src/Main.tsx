@@ -21,6 +21,11 @@ const Root = styled.div`
   user-select: none;
 `;
 
+const NavUl = styled.ul`
+  display: flex;
+  column-gap: 20px;
+`;
+
 const Main: FC<{}> = () => {
   const navigate = useNavigate();
   const navList: ReactNode = (Object.keys(RouteTitle) as Array<RouteName>).map((key) => (
@@ -31,9 +36,9 @@ const Main: FC<{}> = () => {
   return (
     <Root>
       <nav>
-        <ul>
+        <NavUl>
           { navList }
-        </ul>
+        </NavUl>
       </nav>
       <Outlet />
     </Root>
