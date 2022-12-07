@@ -1,8 +1,7 @@
-import React, { FC, ReactNode } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, { FC } from 'react';
+import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import NavListItem from '^/components/atoms/NavListItem';
-import { RouteTitle, RouteName, RouteMatch } from '^/types';
+import NavUl from '^/components/molecules/NavUl';
 
 const Root = styled.div`
   text-align: center;
@@ -21,28 +20,13 @@ const Root = styled.div`
   user-select: none;
 `;
 
-const NavUl = styled.ul`
-  display: flex;
-  column-gap: 20px;
-`;
-
-const Main: FC<{}> = () => {
-  const navigate = useNavigate();
-  const navList: ReactNode = (Object.keys(RouteTitle) as Array<RouteName>).map((key) => (
-    <NavListItem key={RouteTitle[key]} onClick={() => navigate(RouteMatch[key])}>
-      { RouteTitle[key] }
-    </NavListItem>
-  ));
-  return (
-    <Root>
-      <nav>
-        <NavUl>
-          { navList }
-        </NavUl>
-      </nav>
-      <Outlet />
-    </Root>
-  );
-};
+const Main: FC<{}> = () => (
+  <Root>
+    <nav>
+      <NavUl />
+    </nav>
+    <Outlet />
+  </Root>
+);
 
 export default Main;
