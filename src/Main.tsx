@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import NavUl from '^/components/molecules/NavUl';
+import Nav from '^/components/molecules/Nav';
 
 const Root = styled.div`
   text-align: center;
@@ -22,9 +22,7 @@ const Root = styled.div`
 
 const Main: FC<{}> = () => (
   <Root>
-    <nav>
-      <NavUl />
-    </nav>
+    <Nav />
     <Outlet />
   </Root>
 );
