@@ -7,10 +7,8 @@ const Root = styled.div`
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 10vmin 1fr;
   font-size: calc(8px + 2vmin);
   color: white;
   -ms-user-select: none;
@@ -20,10 +18,15 @@ const Root = styled.div`
   user-select: none;
 `;
 
+const ContentArea = styled.div`
+`;
+
 const Main: FC<{}> = () => (
   <Root>
     <Nav />
-    <Outlet />
+    <ContentArea>
+      <Outlet />
+    </ContentArea>
   </Root>
 );
 

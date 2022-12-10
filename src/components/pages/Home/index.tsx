@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import HomeSelection from '^/components/atoms/HomeSelection';
 import color from '^/constants/color';
 
@@ -7,10 +8,17 @@ import KoishiImg from '^/assets/home/koishi.png';
 import HoshinoImg from '^/assets/home/hoshino.png';
 import { RouteMatch, RouteName, RouteTitle } from '^/types';
 
+const Root = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
 const Home: FC<{}> = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <Root>
       <HomeSelection
         title={RouteTitle[RouteName.KOISHI]}
         btnColor={color.koishiTheme}
@@ -31,7 +39,7 @@ const Home: FC<{}> = () => {
           alt="Hoshino Takanashi"
         />
       </HomeSelection>
-    </div>
+    </Root>
   );
 };
 

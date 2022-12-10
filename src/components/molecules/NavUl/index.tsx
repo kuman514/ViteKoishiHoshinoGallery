@@ -5,6 +5,7 @@ import NavListItem from '^/components/atoms/NavListItem';
 import { RouteTitle, RouteName, RouteMatch } from '^/types';
 
 const Root = styled.ul`
+  all: unset;
   display: flex;
   column-gap: 20px;
 `;

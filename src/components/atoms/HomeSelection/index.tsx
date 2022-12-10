@@ -8,6 +8,9 @@ interface SelectButtonStyleProps {
 const SelectButton = styled.button<SelectButtonStyleProps>`
   all: unset;
   background-color: ${({ btnColor }) => btnColor};
+
+  width: 50vmin;
+
   color: white;
   font-size: 16px;
   padding: 10px;
@@ -18,6 +21,10 @@ const SelectButton = styled.button<SelectButtonStyleProps>`
   &:hover {
     background-color: white;
     color: ${({ btnColor }) => btnColor};
+  }
+
+  & > img {
+    width: 100%;
   }
 `;
 
