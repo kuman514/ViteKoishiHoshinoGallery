@@ -86,6 +86,13 @@ module.exports = {
         'react/require-default-props': [
           'off',
         ],
+        'func-style': [
+          'error',
+          'expression',
+        ],
+        'func-names': [
+          'error',
+        ],
       },
     },
   ],
