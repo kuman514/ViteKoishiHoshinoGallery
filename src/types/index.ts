@@ -25,6 +25,7 @@ export enum ContentType {
 }
 
 export interface Content {
+  id: string;
   type: ContentType;
   content: string;
   alt?: string;
