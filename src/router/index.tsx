@@ -3,16 +3,15 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import Main from '^/Main';
 import Home from '^/components/pages/Home';
-import Koishi from '^/components/pages/Koishi';
-import Hoshino from '^/components/pages/Hoshino';
 import ErrorPage from '^/components/pages/ErrorPage';
 
 import { RouteName, RouteMatch } from '^/types';
+import ContentArticle from '^/components/pages/ContentArticle';
 
 const element: Record<RouteName, ReactNode> = {
   [RouteName.HOME]: <Home />,
-  [RouteName.KOISHI]: <Koishi />,
-  [RouteName.HOSHINO]: <Hoshino />,
+  [RouteName.KOISHI]: <ContentArticle />,
+  [RouteName.HOSHINO]: <ContentArticle />,
 };
 
 const routeElements = (Object.keys(RouteMatch) as Array<RouteName>).map((key) => (

@@ -1,6 +1,7 @@
 import React, {
   FC, ReactNode, useEffect, useState,
 } from 'react';
+import { Location, useLocation } from 'react-router-dom';
 import { getContent } from '^/api/getContent';
 import { Content, ContentType } from '^/types';
 
@@ -41,15 +42,21 @@ const convertToContent: (
   }
 };
 
-const Koishi: FC<{}> = () => {
+const ContentArticle: FC<{}> = () => {
+  const location: Location = useLocation();
+  const locationPathNameSplit: string[] = location.pathname.split('/');
+  const contentName: string = (locationPathNameSplit.length === 2)
+    ? locationPathNameSplit[1]
+    : 'wrong-content-name';
+
   const [contents, setContents] = useState<Content[]>([]);
 
   useEffect(() => {
     (async () => {
-      const { data } = await getContent('koishi');
+      const { data } = await getContent(contentName);
       setContents(data.contents);
     })();
-  }, []);
+  }, [contentName]);
 
   const finalElements = contents.map(convertToContent);
 
@@ -60,4 +67,4 @@ const Koishi: FC<{}> = () => {
   );
 };
 
-export default Koishi;
+export default ContentArticle;
