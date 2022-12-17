@@ -48,9 +48,7 @@ const convertToContent: (
         />
       );
     default:
-      return (
-        <>?</>
-      );
+      throw Error(`Content type ${content.type} is not allowed.`);
   }
 };
 
