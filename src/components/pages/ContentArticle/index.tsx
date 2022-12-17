@@ -2,8 +2,13 @@ import React, {
   FC, ReactNode, useEffect, useState,
 } from 'react';
 import { Location, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 import { getContent } from '^/api/getContent';
 import { Content, ContentType } from '^/types';
+
+const YoutubeFrameBorder = styled.iframe`
+  border: 0;
+`;
 
 const convertToContent: (
   content: Content,
@@ -33,7 +38,14 @@ const convertToContent: (
       );
     case ContentType.YOUTUBE:
       return (
-        <>tmp (to be implemented)</>
+        <YoutubeFrameBorder
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${content.content}`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       );
     default:
       return (
