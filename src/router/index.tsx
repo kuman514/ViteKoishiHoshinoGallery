@@ -7,13 +7,14 @@ import ErrorPage from '^/components/pages/ErrorPage';
 
 import { RouteName, RouteMatch } from '^/types';
 import ContentArticle from '^/components/pages/ContentArticle';
+import License from '^/components/pages/License';
 
 const element: Record<RouteName, ReactNode> = {
   [RouteName.HOME]: <Home />,
   [RouteName.KOISHI]: <ContentArticle />,
   [RouteName.HOSHINO]: <ContentArticle />,
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  [RouteName.LICENSE]: <></>,
+  [RouteName.LICENSE]: <License />,
 };
 
 const routeElements = (Object.keys(RouteMatch) as Array<RouteName>).map((key) => (
