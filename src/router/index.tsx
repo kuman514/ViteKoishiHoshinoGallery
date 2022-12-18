@@ -12,6 +12,8 @@ const element: Record<RouteName, ReactNode> = {
   [RouteName.HOME]: <Home />,
   [RouteName.KOISHI]: <ContentArticle />,
   [RouteName.HOSHINO]: <ContentArticle />,
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  [RouteName.LICENSE]: <></>,
 };
 
 const routeElements = (Object.keys(RouteMatch) as Array<RouteName>).map((key) => (

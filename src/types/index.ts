@@ -2,18 +2,21 @@ export enum RouteName {
   HOME = 'HOME',
   KOISHI = 'KOISHI',
   HOSHINO = 'HOSHINO',
+  LICENSE = 'LICENSE',
 }
 
 export const RouteMatch: Record<RouteName, string> = {
   [RouteName.HOME]: '/',
   [RouteName.KOISHI]: 'koishi',
   [RouteName.HOSHINO]: 'hoshino',
+  [RouteName.LICENSE]: 'license',
 };
 
 export const RouteTitle: Record<RouteName, string> = {
   [RouteName.HOME]: 'Home',
   [RouteName.KOISHI]: 'Koishi',
   [RouteName.HOSHINO]: 'Hoshino',
+  [RouteName.LICENSE]: 'License',
 };
 
 export enum ContentType {
