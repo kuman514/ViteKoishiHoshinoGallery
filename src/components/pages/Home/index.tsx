@@ -15,6 +15,10 @@ const Root = styled.div`
   flex-wrap: wrap;
 `;
 
+const CopyrightSection = styled.div`
+  width: 100%;
+`;
+
 const Home: FC<{}> = () => {
   const navigate = useNavigate();
   return (
@@ -39,6 +43,10 @@ const Home: FC<{}> = () => {
           alt="Hoshino Takanashi"
         />
       </HomeSelection>
+      <CopyrightSection>
+        <div>Koishi Komeiji © Team Shanghai Alice</div>
+        <div>Hoshino Takanashi © NEXON & NEXON Games</div>
+      </CopyrightSection>
     </Root>
   );
 };
