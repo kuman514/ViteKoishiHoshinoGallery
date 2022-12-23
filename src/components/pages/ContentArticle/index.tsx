@@ -10,6 +10,12 @@ const YoutubeFrameBorder = styled.iframe`
   border: 0;
 `;
 
+const Anchor = styled.a`
+  all: unset;
+  color: #48b2f0;
+  cursor: pointer;
+`;
+
 const convertToContent: (
   content: Content,
 ) => ReactNode = (content) => {
@@ -35,6 +41,17 @@ const convertToContent: (
     case ContentType.IMAGE:
       return (
         <img key={content.id} src={content.content} alt={content.alt} />
+      );
+    case ContentType.ANCHOR:
+      return (
+        <Anchor
+          key={content.id}
+          href={content.content}
+          target="_blank"
+          rel="noreferrer"
+        >
+          { content.alt }
+        </Anchor>
       );
     case ContentType.YOUTUBE:
       return (
@@ -73,6 +90,14 @@ const ContentArticle: FC<{}> = () => {
   return (
     <div>
       { finalElements }
+      {
+        convertToContent({
+          id: 'test',
+          type: ContentType.ANCHOR,
+          content: 'https://twitter.com/kumankoishi',
+          alt: 'go to kuman',
+        })
+      }
     </div>
   );
 };

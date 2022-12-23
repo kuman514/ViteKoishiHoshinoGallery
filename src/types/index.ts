@@ -24,6 +24,7 @@ export enum ContentType {
   H2 = 'h2',
   PARAGRAPH = 'paragraph',
   IMAGE = 'image',
+  ANCHOR = 'anchor',
   YOUTUBE = 'youtube',
 }
 

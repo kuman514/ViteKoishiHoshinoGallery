@@ -96,6 +96,9 @@ module.exports = {
         'func-names': [
           'error',
         ],
+        'no-case-declarations': [
+          'off',
+        ],
       },
     },
   ],
