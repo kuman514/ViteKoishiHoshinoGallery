@@ -6,8 +6,7 @@ const ErrorPage: FC<{}> = () => {
   useEffect(() => {
     navigate('/');
   });
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  return (<></>);
+  return (<>Error Page</>);
 };
 
 export default ErrorPage;
