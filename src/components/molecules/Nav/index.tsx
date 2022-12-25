@@ -10,6 +10,10 @@ const Root = styled.nav`
   top: 0px;
   left: 0px;
   background-color: #00FF00;
+
+  @media (orientation: landscape) {
+    height: 100vh;
+  }
 `;
 
 const Nav: FC<{}> = () => (

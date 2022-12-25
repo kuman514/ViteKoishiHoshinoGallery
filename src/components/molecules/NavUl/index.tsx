@@ -7,7 +7,16 @@ import { RouteTitle, RouteName, RouteMatch } from '^/types';
 const Root = styled.ul`
   all: unset;
   display: flex;
+
+  flex-direction: row;
   column-gap: 20px;
+  row-gap: 0;
+
+  @media (orientation: landscape) {
+    flex-direction: column;
+    column-gap: 0;
+    row-gap: 20px;
+  }
 `;
 
 const NavUl: FC<{}> = () => {
