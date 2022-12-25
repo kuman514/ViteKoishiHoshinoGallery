@@ -90,14 +90,6 @@ const ContentArticle: FC<{}> = () => {
   return (
     <div>
       { finalElements }
-      {
-        convertToContent({
-          id: 'test',
-          type: ContentType.ANCHOR,
-          content: 'https://twitter.com/kumankoishi',
-          alt: 'go to kuman',
-        })
-      }
     </div>
   );
 };
