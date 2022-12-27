@@ -19,7 +19,7 @@ const Paragraph = styled.p`
   text-align: left;
 `;
 
-const YoutubeFrameBorder = styled.iframe`
+const YoutubeFrame = styled.iframe`
   border: 0;
 `;
 
@@ -68,7 +68,7 @@ const convertToContent: (
       );
     case ContentType.YOUTUBE:
       return (
-        <YoutubeFrameBorder
+        <YoutubeFrame
           width="560"
           height="315"
           src={`https://www.youtube.com/embed/${content.content}`}
