@@ -6,6 +6,19 @@ import styled from 'styled-components';
 import { getContent } from '^/api/getContent';
 import { Content, ContentType } from '^/types';
 
+const Root = styled.div`
+  & > * {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: calc(8px + 3vmin);
+  }
+`;
+
+const Paragraph = styled.p`
+  text-align: left;
+`;
+
 const YoutubeFrameBorder = styled.iframe`
   border: 0;
 `;
@@ -34,9 +47,9 @@ const convertToContent: (
       );
     case ContentType.PARAGRAPH:
       return (
-        <p key={content.id}>
+        <Paragraph key={content.id}>
           { content.content }
-        </p>
+        </Paragraph>
       );
     case ContentType.IMAGE:
       return (
@@ -88,9 +101,9 @@ const ContentArticle: FC<{}> = () => {
   const finalElements = contents.map(convertToContent);
 
   return (
-    <div>
+    <Root>
       { finalElements }
-    </div>
+    </Root>
   );
 };
 

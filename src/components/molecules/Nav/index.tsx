@@ -9,7 +9,7 @@ const Root = styled.nav`
   position: sticky;
   top: 0px;
   left: 0px;
-  background-color: #00FF00;
+  background-color: rgba(0, 0, 0, 0.5);
 
   @media (orientation: landscape) {
     height: 100vh;
