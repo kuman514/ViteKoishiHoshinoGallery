@@ -17,6 +17,7 @@ const SelectButton = styled.button<SelectButtonStyleProps>`
   border-radius: 10px;
   cursor: pointer;
   transition: all linear 80ms;
+  margin-bottom: 15px;
 
   &:hover {
     background-color: white;
